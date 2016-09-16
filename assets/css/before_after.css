@@ -1,0 +1,87 @@
+#bac_select_laser {
+    -webkit-appearance: menulist !important;
+    -moz-appearance: menulist !important;
+}
+.bacontest-field-group {
+    margin: 10px 0;
+}
+.bacontest-field-group label {
+    width: 250px;
+}
+.bacontest-field-group input {
+    color: grey !important;
+    display: inline-block !important;
+    width: 320px;
+}
+
+.treatment-group label {
+    width: 100%;
+}
+.treatment-group input {
+    display: block !important;
+}
+
+ol.lower-alpha-list {
+    list-style-type: lower-alpha;
+}
+
+.bacontest-official-rules-section, .entry-criteria-section {
+    height: 350px;
+    width: 600px;
+    border: 1px solid grey;
+    overflow: auto;
+    padding: 10px;
+}
+
+.contest-rules-header {
+    font-weight: bold;
+    text-align: center;
+}
+
+.official-rules {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.eligibility-list {
+    margin-left: 15px;
+}
+
+.accept-official-rules input[type="checkbox"], .entry-criteria-section input[type="checkbox"]{
+    padding: 7px;
+    margin: 10px;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+}
+
+.entry-criteria-group {
+    margin-bottom: 20px;
+}
+.entry-criteria-group p {
+    margin-bottom: 0;
+}
+
+.custom-file-upload-btn {
+    background-color: orange;
+    border-radius: 7px;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    width: 210px;
+}
+/* SculpSure Contest Entry */
+#ss_before_image, #ss_after_image {
+    display: none !important;
+}
+
+/* Icon Contest Entry */
+#icon-judging-criteria {
+    padding: 10px;
+}
+.icon-skin-condotion {
+    font-weight: bold;
+}
+
+#ss_contest_entry, #icon_contest_entry {
+    display: none;
+}
