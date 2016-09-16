@@ -27,7 +27,21 @@ jQuery(document).ready(function(){
       },
       onFinished: function (event, currentIndex)
       {
-          alert("Submitted!");
+          //var tData = JSON.stringify(jQuery(".ss_treatment_details").serializeArray());
+
+          jQuery.ajax(
+              {
+                  url: "https://bacontest.cynosure.horse/data-test",
+                  success: function(result)
+                  {
+                      console.log(result);
+                  },
+                  data: jQuery("#sculpsure-contest-form").serialize(),
+                  type: 'POST'
+              }
+
+          );
+          console.log("SculpSure Form Submitted!");
       }
   });
 
@@ -57,7 +71,17 @@ jQuery(document).ready(function(){
       },
       onFinished: function (event, currentIndex)
       {
-          alert("Submitted!");
+          jQuery.ajax(
+              {
+                  url: "https://bacontest.cynosure.horse/data-test",
+                  success: function(result)
+                  {
+                      console.log(result);
+                  },
+                  type: 'POST'
+              }
+          );
+          console.log("Icon Form Submitted!");
       }
   });
 
@@ -70,9 +94,11 @@ jQuery(document).ready(function(){
           jQuery(".bac_select_laser_container").append("<p id='device-select-error-msg'>Please select a device</p>");
       }
       else if (selectedLaser === "sculpsure"){
+          jQuery("#device-select-error-msg").remove();
           jQuery("#icon_contest_entry").hide();
           jQuery("#ss_contest_entry").show();
       } else {
+          jQuery("#device-select-error-msg").remove();
           jQuery("#ss_contest_entry").hide();
           jQuery("#icon_contest_entry").show();
       }

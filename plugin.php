@@ -15,9 +15,8 @@ function generate_b_a_contest_page()
 
     ?>
     <div class="bac_details">
-        <p>You continue to provide your patients with the results they desire - now it's time to show them off! Cynosure will be giving <strong>$500 to physicians</strong> with the best before
-            and after photos for Icon treatments with up to 5 winners selected each quarter.</p>
-        <p>Winners will also be featured on Cynosure's social media pages.</p>
+        <p>Your SculpSure and Icon Before and After Photos Can Earn you $500!</p>
+        <p>You continue to provide your patients with the results you desire – now it’s time to show them off! In addition to winning $500, winners will also be featured on Cynosure’s social media pages. Enter to win!</p>
     </div>
     <div class="bac_select_laser_container">
         <select class="bac_select_laser" name="bac_select_laser" id="bac_select_laser">
@@ -30,7 +29,7 @@ function generate_b_a_contest_page()
         <h2>SculpSure<sup>&reg;</sup> Photo Contest Entry Form</h2>
         <form id="sculpsure-contest-form" action="#">
           <div>
-              <h3>Rules</h3>
+              <!-- <h3>Rules</h3>
               <section>
                   <div class="bacontest-official-rules-section">
                       <h2 class="contest-rules-header">SCULPSURE<sup>&reg;</sup> PHOTO CONTEST OFFICIAL RULES AND ENTRY FORM<br>NO PURCHASE NECESSARY</h2>
@@ -96,57 +95,58 @@ function generate_b_a_contest_page()
                   <div class="accept-official-rules">
                       <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I have read and understood the Official Rules. </label>
                   </div>
-              </section>
+              </section> -->
               <h3>Practice Details</h3>
               <section>
+                  <input type="hidden" name="device_type" value="sculpsure">
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceName">Practice Name *</label>
-                      <input id="ss_practiceName" name="ss_practiceName" type="text" class="required">
+                      <label for="ss_practice_name">Practice Name *</label>
+                      <input id="ss_practice_name" name="ss_practice_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceAddress">Practice Address *</label>
-                      <input id="ss_practiceAddress" name="ss_practiceAddress" type="text" class="required">
+                      <label for="ss_practice_street_address">Practice Address *</label>
+                      <input id="ss_practice_street_address" name="ss_practice_street_address" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceCity">Practice City *</label>
-                      <input id="ss_practiceCity" name="ss_practiceCity" type="text" class="required">
+                      <label for="ss_city">Practice City *</label>
+                      <input id="ss_city" name="ss_city" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceState">Practice State/Province *</label>
-                      <input id="ss_practiceState" name="ss_practiceState" type="text" class="required">
+                      <label for="ss_state">Practice State/Province *</label>
+                      <input id="ss_state" name="ss_state" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practicePostalCode">Practice Postal Code*</label>
-                      <input id="ss_practicePostalCode" name="ss_practicePostalCode" type="text" class="required">
+                      <label for="ss_postal_code">Practice Postal Code*</label>
+                      <input id="ss_postal_code" name="ss_postal_code" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensedPractitioner">Licensed Practitioner Name *</label>
-                      <input id="ss_licensedPractitioner" name="ss_licensedPractitioner" type="text" class="required">
+                      <label for="ss_licensed_practitioner_name">Licensed Practitioner Name *</label>
+                      <input id="ss_licensed_practitioner_name" name="ss_licensed_practitioner_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_supervisingPhysician">Supervising Physician Name*</label>
-                      <input id="ss_supervisingPhysician" name="ss_supervisingPhysician" type="text" class="required">
+                      <label for="ss_supervising_physician_name">Supervising Physician Name*</label>
+                      <input id="ss_supervising_physician_name" name="ss_supervising_physician_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitterName">Submitter Name *</label>
-                      <input id="ss_submitterName" name="ss_submitterName" type="text" class="required">
+                      <label for="ss_submitter_name">Submitter Name *</label>
+                      <input id="ss_submitter_name" name="ss_submitter_name" type="text" class="required">
                       <p>
                           (If the submitter is different from the Licensed Practitioner, the submitter must be working under the direction and authority of
                           and with permission to sign on behalf of the Licensed Practitioner)
                       </p>
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensedPractitionerEmail">Licensed Practitioner Email *</label>
-                      <input id="ss_licensedPractitionerEmail" name="ss_licensedPractitionerEmail" type="text" class="required">
+                      <label for="ss_licensed_practitioner_email">Licensed Practitioner Email *</label>
+                      <input id="ss_licensed_practitioner_email" name="ss_licensed_practitioner_email" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitterEmail">Submitter Email *</label>
-                      <input id="ss_submitterEmail" name="ss_submitterEmail" type="text" class="required">
+                      <label for="ss_submitter_email">Submitter Email *</label>
+                      <input id="ss_submitter_email" name="ss_submitter_email" type="text" class="required">
                   </div>
 
                   <p>(*) Mandatory</p>
               </section>
-              <h3>Entry Criteria</h3>
+              <!-- <h3>Entry Criteria</h3>
               <section>
                   <p>To be eligible to Enter the SculpSure Photo Contest the following Entry Criteria must be met or agreed to:</p>
 
@@ -184,7 +184,7 @@ function generate_b_a_contest_page()
                             <input id="ss_checkbox_7" name="ss_checkbox_7" type="checkbox" class="required"> <label for="ss_checkbox_7">I agree. </label>
                         </div>
                   </div>
-              </section>
+              </section> -->
 
               <h3>Treatment Details</h3>
               <section>
@@ -192,28 +192,28 @@ function generate_b_a_contest_page()
                   <p>Disclosure of the Treatment Details, specified below, associated with the submitted photos.</p>
                   <div class="bacontest-field-group treatment-group">
                       <label for="ss_numTreatments">Number of treatments *</label>
-                      <input id="ss_numTreatments" name="ss_numTreatments" type="text" class="required">
+                      <input id="ss_numTreatments" name="ss_numTreatments" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="ss_numApplicators">Number of applicators used per treatment *</label>
-                      <input id="ss_numApplicators" name="ss_numApplicators" type="text" class="required">
+                      <input id="ss_numApplicators" name="ss_numApplicators" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="ss_treatmentArea">Area where treatment was performed *</label>
-                      <input id="ss_treatmentArea" name="ss_treatmentArea" type="text" class="required">
+                      <input id="ss_treatmentArea" name="ss_treatmentArea" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="ss_treatmentTime">Time elapsed after the last treatment performed *</label>
-                      <input id="ss_treatmentTime" name="ss_treatmentTime" type="text" class="required">
+                      <input id="ss_treatmentTime" name="ss_treatmentTime" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="ss_treatmentComments">Please add any comments regarding the history or satisfaction of the patient that is
                           the subject of the entered photos *</label>
-                      <textarea id="ss_treatmentComments" name="ss_treatmentComments" class="required" rows="4" cols="60" style="color:grey"></textarea>
+                      <textarea id="ss_treatmentComments" name="ss_treatmentComments" class="required ss_treatment_details" rows="4" cols="60" style="color:grey"></textarea>
                   </div>
                   <p>(*) Mandatory</p>
               </section>
-              <h3>Upload Photos</h3>
+              <!-- <h3>Upload Photos</h3>
               <section>
                   <p>Upload before and after photo as separate files, having file types JPG or PNG indicating in the file path ‘before’ or ‘after’:</p>
                     <label for="ss_before_image" class="custom-file-upload-btn">
@@ -227,7 +227,7 @@ function generate_b_a_contest_page()
                     <p><input id="ss_after_image" type="file" accept='image/*' size="27"/></p>
 
                     By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.
-              </section>
+              </section> -->
           </div>
         </form>
     </div>
@@ -330,49 +330,50 @@ function generate_b_a_contest_page()
               </section>
               <h3>Practice Details</h3>
               <section>
+                  <input type="hidden" name="device_type" value="sculpsure">
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceName">Practice Name *</label>
-                      <input id="ss_practiceName" name="ss_practiceName" type="text" class="required">
+                      <label for="ss_practice_name">Practice Name *</label>
+                      <input id="ss_practice_name" name="ss_practice_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceAddress">Practice Address *</label>
-                      <input id="ss_practiceAddress" name="ss_practiceAddress" type="text" class="required">
+                      <label for="ss_practice_street_address">Practice Address *</label>
+                      <input id="ss_practice_street_address" name="ss_practice_street_address" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceCity">Practice City *</label>
-                      <input id="ss_practiceCity" name="ss_practiceCity" type="text" class="required">
+                      <label for="ss_city">Practice City *</label>
+                      <input id="ss_city" name="ss_city" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practiceState">Practice State/Province *</label>
-                      <input id="ss_practiceState" name="ss_practiceState" type="text" class="required">
+                      <label for="ss_state">Practice State/Province *</label>
+                      <input id="ss_state" name="ss_state" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practicePostalCode">Practice Postal Code*</label>
-                      <input id="ss_practicePostalCode" name="ss_practicePostalCode" type="text" class="required">
+                      <label for="ss_postal_code">Practice Postal Code*</label>
+                      <input id="ss_postal_code" name="ss_postal_code" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensedPractitioner">Licensed Practitioner Name *</label>
-                      <input id="ss_licensedPractitioner" name="ss_licensedPractitioner" type="text" class="required">
+                      <label for="ss_licensed_practitioner_name">Licensed Practitioner Name *</label>
+                      <input id="ss_licensed_practitioner_name" name="ss_licensed_practitioner_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_supervisingPhysician">Supervising Physician Name*</label>
-                      <input id="ss_supervisingPhysician" name="ss_supervisingPhysician" type="text" class="required">
+                      <label for="ss_supervising_physician_name">Supervising Physician Name*</label>
+                      <input id="ss_supervising_physician_name" name="ss_supervising_physician_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitterName">Submitter Name *</label>
-                      <input id="ss_submitterName" name="ss_submitterName" type="text" class="required">
+                      <label for="ss_submitter_name">Submitter Name *</label>
+                      <input id="ss_submitter_name" name="ss_submitter_name" type="text" class="required">
                       <p>
                           (If the submitter is different from the Licensed Practitioner, the submitter must be working under the direction and authority of
                           and with permission to sign on behalf of the Licensed Practitioner)
                       </p>
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensedPractitionerEmail">Licensed Practitioner Email *</label>
-                      <input id="ss_licensedPractitionerEmail" name="ss_licensedPractitionerEmail" type="text" class="required">
+                      <label for="ss_licensed_practitioner_email">Licensed Practitioner Email *</label>
+                      <input id="ss_licensed_practitioner_email" name="ss_licensed_practitioner_email" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitterEmail">Submitter Email *</label>
-                      <input id="ss_submitterEmail" name="ss_submitterEmail" type="text" class="required">
+                      <label for="ss_submitter_email">Submitter Email *</label>
+                      <input id="ss_submitter_email" name="ss_submitter_email" type="text" class="required">
                   </div>
 
                   <p>(*) Mandatory</p>
