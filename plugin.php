@@ -14,6 +14,7 @@ function generate_b_a_contest_page()
 {
 
     ?>
+    <div id="overlay"></div>
     <div class="bac_details">
         <p>Your SculpSure and Icon Before and After Photos Can Earn you $500!</p>
         <p>You continue to provide your patients with the results you desire – now it’s time to show them off! In addition to winning $500, winners will also be featured on Cynosure’s social media pages. Enter to win!</p>
@@ -26,10 +27,10 @@ function generate_b_a_contest_page()
         </select>
     </div>
     <div id="ss_contest_entry">
-        <h2>SculpSure<sup>&reg;</sup> Photo Contest Entry Form</h2>
-        <form id="sculpsure-contest-form" action="#">
+        <p class="entry_form_title">SculpSure<sup>&reg;</sup> Photo Contest Entry Form</p>
+        <form id="sculpsure-contest-form" action="http://bacontest.cynosure.horse/submission" method="POST">
           <div>
-              <!-- <h3>Rules</h3>
+              <h3>Rules</h3>
               <section>
                   <div class="bacontest-official-rules-section">
                       <h2 class="contest-rules-header">SCULPSURE<sup>&reg;</sup> PHOTO CONTEST OFFICIAL RULES AND ENTRY FORM<br>NO PURCHASE NECESSARY</h2>
@@ -93,43 +94,43 @@ function generate_b_a_contest_page()
                       <p><strong>PRIVACY POLICY:</strong> Any personally identifiable information collected during participation in the Contest will be collected by Cynosure, Inc., for purposes of the proper administration and fulfillment of the Contest as described in these Official Rules and, where permitted by law, in accordance with the Sponsor’s Privacy Policy, as stated at <a href="http://www.cynosure.com/privacy-policy/" target="_blank">http://www.cynosure.com/privacy-policy/</a></p>
                   </div>
                   <div class="accept-official-rules">
-                      <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I have read and understood the Official Rules. </label>
+                      <input id="ss_accept_terms" name="accept_terms" type="checkbox" class="required"> <label for="ss_accept_terms">I have read and understood the Official Rules. </label>
                   </div>
-              </section> -->
+              </section>
               <h3>Practice Details</h3>
               <section>
                   <input type="hidden" name="device_type" value="sculpsure">
                   <div class="bacontest-field-group">
                       <label for="ss_practice_name">Practice Name *</label>
-                      <input id="ss_practice_name" name="ss_practice_name" type="text" class="required">
+                      <input id="ss_practice_name" name="practice_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_practice_street_address">Practice Address *</label>
-                      <input id="ss_practice_street_address" name="ss_practice_street_address" type="text" class="required">
+                      <input id="ss_practice_street_address" name="practice_street_address" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_city">Practice City *</label>
-                      <input id="ss_city" name="ss_city" type="text" class="required">
+                      <input id="ss_city" name="city" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_state">Practice State/Province *</label>
-                      <input id="ss_state" name="ss_state" type="text" class="required">
+                      <input id="ss_state" name="state" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_postal_code">Practice Postal Code*</label>
-                      <input id="ss_postal_code" name="ss_postal_code" type="text" class="required">
+                      <input id="ss_postal_code" name="postal_code" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_licensed_practitioner_name">Licensed Practitioner Name *</label>
-                      <input id="ss_licensed_practitioner_name" name="ss_licensed_practitioner_name" type="text" class="required">
+                      <input id="ss_licensed_practitioner_name" name="licensed_practitioner_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_supervising_physician_name">Supervising Physician Name*</label>
-                      <input id="ss_supervising_physician_name" name="ss_supervising_physician_name" type="text" class="required">
+                      <input id="ss_supervising_physician_name" name="supervising_physician_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_submitter_name">Submitter Name *</label>
-                      <input id="ss_submitter_name" name="ss_submitter_name" type="text" class="required">
+                      <input id="ss_submitter_name" name="submitter_name" type="text" class="required">
                       <p>
                           (If the submitter is different from the Licensed Practitioner, the submitter must be working under the direction and authority of
                           and with permission to sign on behalf of the Licensed Practitioner)
@@ -137,16 +138,16 @@ function generate_b_a_contest_page()
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_licensed_practitioner_email">Licensed Practitioner Email *</label>
-                      <input id="ss_licensed_practitioner_email" name="ss_licensed_practitioner_email" type="text" class="required">
+                      <input id="ss_licensed_practitioner_email" name="licensed_practitioner_email" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
                       <label for="ss_submitter_email">Submitter Email *</label>
-                      <input id="ss_submitter_email" name="ss_submitter_email" type="text" class="required">
+                      <input id="ss_submitter_email" name="submitter_email" type="text" class="required">
                   </div>
 
                   <p>(*) Mandatory</p>
               </section>
-              <!-- <h3>Entry Criteria</h3>
+              <h3>Entry Criteria</h3>
               <section>
                   <p>To be eligible to Enter the SculpSure Photo Contest the following Entry Criteria must be met or agreed to:</p>
 
@@ -156,83 +157,85 @@ function generate_b_a_contest_page()
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Licensed Practitioner is NOT a Vermont health care provider pursuant to Vermont’s Prescribed Products Gift Ban and Disclosure Law.</p>
-                            <input id="ss_checkbox_1" name="ss_checkbox_1" type="checkbox" class="required"> <label for="ss_checkbox_1">I agree. </label>
+                            <input id="ss_checkbox_1" name="checkbox_1" type="checkbox" class="required"> <label for="ss_checkbox_1">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>Licensed Practitioner is NOT a person authorized to prescribe or purchase a medical device in the State of Massachusetts also called a “Covered Recipient” under the Massachusetts Pharmaceutical and Medical Device Manufacturer Code of Conduct?</p>
-                            <input id="ss_checkbox_2" name="ss_checkbox_2" type="checkbox" class="required"> <label for="ss_checkbox_2">I agree. </label>
+                            <input id="ss_checkbox_2" name="checkbox_2" type="checkbox" class="required"> <label for="ss_checkbox_2">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter is the Licensed Practitioner or is working under the direction and authority of and with permission to sign on behalf of the Licensed Practitioner.</p>
-                            <input id="ss_checkbox_3" name="ss_checkbox_3" type="checkbox" class="required"> <label for="ss_checkbox_3">I agree. </label>
+                            <input id="ss_checkbox_3" name="checkbox_3" type="checkbox" class="required"> <label for="ss_checkbox_3">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter agrees to be bound by the SculpSure Photo Contest Official Rules.  </p>
-                            <input id="ss_checkbox_4" name="ss_checkbox_4" type="checkbox" class="required"> <label for="ss_checkbox_4">I agree. </label>
+                            <input id="ss_checkbox_4" name="checkbox_4" type="checkbox" class="required"> <label for="ss_checkbox_4">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>High-resolution, unedited digital photos.</p>
-                            <input id="ss_checkbox_5" name="ss_checkbox_5" type="checkbox" class="required"> <label for="ss_checkbox_5">I agree, photos are unedited. </label>
+                            <input id="ss_checkbox_5" name="checkbox_5" type="checkbox" class="required"> <label for="ss_checkbox_5">I agree, photos are unedited. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The patient that is the Subject of the entered photos is over 18 years of age and has irrevocably consented to the entered photos being used and distributed including for marketing and promotional purposes. </p>
-                            <input id="ss_checkbox_6" name="ss_checkbox_6" type="checkbox" class="required"> <label for="ss_checkbox_6">I agree. You must provide a copy of the patient consent to Cynosure upon request.</label>
+                            <input id="ss_checkbox_6" name="checkbox_6" type="checkbox" class="required"> <label for="ss_checkbox_6">I agree. You must provide a copy of the patient consent to Cynosure upon request.</label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter agrees to the following License Agreement for use of the photos:
                             By submitting this entry form, you hereby represent and affirm that you, the Submitter, own or have the rights to convey any and all right and title in any material submitted as part of your entry into the SculpSure Photo Contest. By submitting your photos and participating in the  SculpSure Photo Contest and for good and valuable consideration, the receipt and sufficiency of which is acknowledged, the Submitter hereby grants to Cynosure an irrevocable, royalty-free, exclusive license, in the medical device field and sub licensable to Cynosure customers, to use, modify, reproduce, create derivatives of, distribute, compile, organize, transcribe and transmit, in printed or electronic form or in any form now known or hereafter developed, the uploaded photographs submitted herein together with the Supervising Physician name and/or Licensed Practitioner name and/or Practice Name.  By participating in the SculpSure Photo Contest the Submitter: (a) warrants and represents that he/she/it has the full power to enter into this License Agreement and to grant the rights provided herein and that the exercise by Cynosure of such rights shall not infringe or adversely affect the rights of others, (b) expressly waives all of rights under the U.S. Copyright Act for the use of the material use in the medical device field in favor of Cynosure and all Cynosure customers, (c) releases and discharges Cynosure and its affiliates, and its and their officers, agents, employees, successors and assigns from any and all claims or demands arising out of or connected with use of said works in accordance with this License Agreement, (d) indemnifies Cynosure against any claims brought in connection with the works for invasion of privacy, violation of rights of publicity, or infringement of intellectual property, and (e) understands that Cynosure may or may not, in Cynosure’s sole discretion, give attribution as to the source of any such work. </p>
-                            <input id="ss_checkbox_7" name="ss_checkbox_7" type="checkbox" class="required"> <label for="ss_checkbox_7">I agree. </label>
+                            <input id="ss_checkbox_7" name="checkbox_7" type="checkbox" class="required"> <label for="ss_checkbox_7">I agree. </label>
                         </div>
                   </div>
-              </section> -->
+              </section>
 
               <h3>Treatment Details</h3>
               <section>
                   <p>To be eligible to Enter the SculpSure Photo Contest the following Entry Criteria must be met or agreed to:</p>
                   <p>Disclosure of the Treatment Details, specified below, associated with the submitted photos.</p>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="ss_numTreatments">Number of treatments *</label>
-                      <input id="ss_numTreatments" name="ss_numTreatments" type="text" class="required ss_treatment_details">
+                      <label for="ss_num_treatments">Number of treatments *</label>
+                      <input id="ss_num_treatments" name="num_treatments" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="ss_numApplicators">Number of applicators used per treatment *</label>
-                      <input id="ss_numApplicators" name="ss_numApplicators" type="text" class="required ss_treatment_details">
+                      <label for="ss_num_applicators">Number of applicators used per treatment *</label>
+                      <input id="ss_num_applicators" name="num_applicators" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="ss_treatmentArea">Area where treatment was performed *</label>
-                      <input id="ss_treatmentArea" name="ss_treatmentArea" type="text" class="required ss_treatment_details">
+                      <label for="ss_treatment_area">Area where treatment was performed *</label>
+                      <input id="ss_treatment_area" name="treatment_area" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="ss_treatmentTime">Time elapsed after the last treatment performed *</label>
-                      <input id="ss_treatmentTime" name="ss_treatmentTime" type="text" class="required ss_treatment_details">
+                      <label for="ss_treatment_time">Time elapsed after the last treatment performed *</label>
+                      <input id="ss_treatment_time" name="treatment_time" type="text" class="required ss_treatment_details">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="ss_treatmentComments">Please add any comments regarding the history or satisfaction of the patient that is
+                      <label for="ss_treatment_comments">Please add any comments regarding the history or satisfaction of the patient that is
                           the subject of the entered photos *</label>
-                      <textarea id="ss_treatmentComments" name="ss_treatmentComments" class="required ss_treatment_details" rows="4" cols="60" style="color:grey"></textarea>
+                      <textarea id="ss_treatment_comments" name="treatment_comments" class="required ss_treatment_details" rows="4" cols="60" style="color:grey"></textarea>
                   </div>
                   <p>(*) Mandatory</p>
               </section>
-              <!-- <h3>Upload Photos</h3>
+              <h3>Upload Photos</h3>
               <section>
-                  <p>Upload before and after photo as separate files, having file types JPG or PNG indicating in the file path ‘before’ or ‘after’:</p>
+                  <p id="before-image-upload">Upload before and after photo as separate files, having file types JPG or PNG indicating in the file path ‘before’ or ‘after’:</p>
                     <label for="ss_before_image" class="custom-file-upload-btn">
                         UPLOAD BEFORE IMAGE
                     </label>
-                    <p><input id="ss_before_image" type="file" accept='image/*' size="27"/></p>
+                    <p><input id="ss_before_image" name="before_image" type="file" accept='image/*' size="27" required /></p>
+                    <p id="ss_before_image_selected"></p>
 
                     <label for="ss_after_image" class="custom-file-upload-btn">
                         UPLOAD AFTER IMAGE
                     </label>
-                    <p><input id="ss_after_image" type="file" accept='image/*' size="27"/></p>
+                    <p><input id="ss_after_image" name="after_image" type="file" accept='image/*' size="27" required/></p>
+                    <p id="ss_after_image_selected"></p>
 
-                    By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.
-              </section> -->
+                <p>By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.</p>
+              </section>
           </div>
         </form>
     </div>
-    <!-- <div id="icon_contest_entry">
-        <h2>Icon Photo Contest Entry Form</h2>
+    <div id="icon_contest_entry">
+        <p class="entry_form_title">Icon Photo Contest Entry Form</p>
         <form id="icon-contest-form" action="#">
           <div>
               <h3>Rules</h3>
@@ -325,55 +328,55 @@ function generate_b_a_contest_page()
                       <p><strong>PRIVACY POLICY:</strong> Any personally identifiable information collected during participation in the Contest will be collected by Cynosure, Inc., for purposes of the proper administration and fulfillment of the Contest as described in these Official Rules and, where permitted by law, in accordance with the Sponsor’s Privacy Policy, as stated at <a href="http://www.cynosure.com/privacy-policy/" target="_blank">http://www.cynosure.com/privacy-policy/</a></p>
                   </div>
                   <div class="accept-official-rules">
-                      <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I have read and understood the Official Rules. </label>
+                      <input id="icon_accept_terms" name="accept_terms" type="checkbox" class="required"> <label for="icon_accept_terms">I have read and understood the Official Rules. </label>
                   </div>
               </section>
               <h3>Practice Details</h3>
               <section>
-                  <input type="hidden" name="device_type" value="sculpsure">
+                  <input type="hidden" name="device_type" value="icon">
                   <div class="bacontest-field-group">
-                      <label for="ss_practice_name">Practice Name *</label>
-                      <input id="ss_practice_name" name="ss_practice_name" type="text" class="required">
+                      <label for="icon_practice_name">Practice Name *</label>
+                      <input id="icon_practice_name" name="practice_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_practice_street_address">Practice Address *</label>
-                      <input id="ss_practice_street_address" name="ss_practice_street_address" type="text" class="required">
+                      <label for="icon_practice_street_address">Practice Address *</label>
+                      <input id="icon_practice_street_address" name="practice_street_address" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_city">Practice City *</label>
-                      <input id="ss_city" name="ss_city" type="text" class="required">
+                      <label for="icon_city">Practice City *</label>
+                      <input id="icon_city" name="city" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_state">Practice State/Province *</label>
-                      <input id="ss_state" name="ss_state" type="text" class="required">
+                      <label for="icon_state">Practice State/Province *</label>
+                      <input id="icon_state" name="state" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_postal_code">Practice Postal Code*</label>
-                      <input id="ss_postal_code" name="ss_postal_code" type="text" class="required">
+                      <label for="icon_postal_code">Practice Postal Code*</label>
+                      <input id="icon_postal_code" name="postal_code" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensed_practitioner_name">Licensed Practitioner Name *</label>
-                      <input id="ss_licensed_practitioner_name" name="ss_licensed_practitioner_name" type="text" class="required">
+                      <label for="icon_licensed_practitioner_name">Licensed Practitioner Name *</label>
+                      <input id="icon_licensed_practitioner_name" name="licensed_practitioner_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_supervising_physician_name">Supervising Physician Name*</label>
-                      <input id="ss_supervising_physician_name" name="ss_supervising_physician_name" type="text" class="required">
+                      <label for="icon_supervising_physician_name">Supervising Physician Name*</label>
+                      <input id="icon_supervising_physician_name" name="supervising_physician_name" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitter_name">Submitter Name *</label>
-                      <input id="ss_submitter_name" name="ss_submitter_name" type="text" class="required">
+                      <label for="icon_submitter_name">Submitter Name *</label>
+                      <input id="icon_submitter_name" name="submitter_name" type="text" class="required">
                       <p>
                           (If the submitter is different from the Licensed Practitioner, the submitter must be working under the direction and authority of
                           and with permission to sign on behalf of the Licensed Practitioner)
                       </p>
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_licensed_practitioner_email">Licensed Practitioner Email *</label>
-                      <input id="ss_licensed_practitioner_email" name="ss_licensed_practitioner_email" type="text" class="required">
+                      <label for="icon_licensed_practitioner_email">Licensed Practitioner Email *</label>
+                      <input id="icon_licensed_practitioner_email" name="licensed_practitioner_email" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group">
-                      <label for="ss_submitter_email">Submitter Email *</label>
-                      <input id="ss_submitter_email" name="ss_submitter_email" type="text" class="required">
+                      <label for="icon_submitter_email">Submitter Email *</label>
+                      <input id="icon_submitter_email" name="submitter_email" type="text" class="required">
                   </div>
 
                   <p>(*) Mandatory</p>
@@ -388,32 +391,32 @@ function generate_b_a_contest_page()
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Licensed Practitioner is NOT a Vermont health care provider pursuant to Vermont’s Prescribed Products Gift Ban and Disclosure Law.</p>
-                            <input id="icon_checkbox_1" name="icon_checkbox_1" type="checkbox" class="required"> <label for="icon_checkbox_1">I agree. </label>
+                            <input id="icon_checkbox_1" name="checkbox_1" type="checkbox" class="required"> <label for="icon_checkbox_1">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>Licensed Practitioner is NOT a person authorized to prescribe or purchase a medical device in the State of Massachusetts also called a “Covered Recipient” under the Massachusetts Pharmaceutical and Medical Device Manufacturer Code of Conduct? </p>
-                            <input id="icon_checkbox_2" name="icon_checkbox_2" type="checkbox" class="required"> <label for="icon_checkbox_2">I agree. </label>
+                            <input id="icon_checkbox_2" name="checkbox_2" type="checkbox" class="required"> <label for="icon_checkbox_2">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter is the Licensed Practitioner or is working under the direction and authority of and with permission to sign on behalf of the Licensed Practitioner. </p>
-                            <input id="icon_checkbox_3" name="icon_checkbox_3" type="checkbox" class="required"> <label for="icon_checkbox_3">I agree. </label>
+                            <input id="icon_checkbox_3" name="checkbox_3" type="checkbox" class="required"> <label for="icon_checkbox_3">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter agrees to be bound by the Icon Photo Contest Official Rules.  </p>
-                            <input id="icon_checkbox_4" name="icon_checkbox_4" type="checkbox" class="required"> <label for="icon_checkbox_4">I agree. </label>
+                            <input id="icon_checkbox_4" name="checkbox_4" type="checkbox" class="required"> <label for="icon_checkbox_4">I agree. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>High-resolution, unedited digital photos. </p>
-                            <input id="icon_checkbox_5" name="icon_checkbox_5" type="checkbox" class="required"> <label for="icon_checkbox_5">I agree, photos are unedited. </label>
+                            <input id="icon_checkbox_5" name="checkbox_5" type="checkbox" class="required"> <label for="icon_checkbox_5">I agree, photos are unedited. </label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The patient that is the Subject of the entered photos is over 18 years of age and has irrevocably consented to the entered photos (including his/her recognizable face where applicable) being used and distributed including for marketing and promotional purposes.  </p>
-                            <input id="icon_checkbox_6" name="icon_checkbox_6" type="checkbox" class="required"> <label for="icon_checkbox_6">I agree. You must provide a copy of the patient consent to Cynosure upon request.</label>
+                            <input id="icon_checkbox_6" name="checkbox_6" type="checkbox" class="required"> <label for="icon_checkbox_6">I agree. You must provide a copy of the patient consent to Cynosure upon request.</label>
                         </div>
                         <div class="entry-criteria-group">
                             <p>The Submitter agrees to the following License Agreement for use of the photos:
                             By submitting this entry form, you hereby represent and affirm that you, the Submitter, own or have the rights to convey any and all right and title in any material submitted as part of your entry into the Icon Photo Contest. By submitting your photos and participating in the  Icon Photo Contest and for good and valuable consideration, the receipt and sufficiency of which is acknowledged, the Submitter hereby grants to Cynosure an irrevocable, royalty-free, exclusive license, in the medical device field and sub licensable to Cynosure customers, to use, modify, reproduce, create derivatives of, distribute, compile, organize, transcribe and transmit, in printed or electronic form or in any form now known or hereafter developed, the uploaded photographs submitted herein together with the Supervising Physician name and/or Licensed Practitioner name and/or Practice Name.  By participating in the Icon Photo Contest the Submitter: (a) warrants and represents that he/she/it has the full power to enter into this License Agreement and to grant the rights provided herein and that the exercise by Cynosure of such rights shall not infringe or adversely affect the rights of others, (b) expressly waives all of rights under the U.S. Copyright Act for the use of the material use in the medical device field in favor of Cynosure and all Cynosure customers, (c) releases and discharges Cynosure and its affiliates, and its and their officers, agents, employees, successors and assigns from any and all claims or demands arising out of or connected with use of said works in accordance with this License Agreement, (d) indemnifies Cynosure against any claims brought in connection with the works for invasion of privacy, violation of rights of publicity, or infringement of intellectual property, and (e) understands that Cynosure may or may not, in Cynosure’s sole discretion, give attribution as to the source of any such work. </p>
-                            <input id="icon_checkbox_7" name="icon_checkbox_7" type="checkbox" class="required"> <label for="icon_checkbox_7">I agree. </label>
+                            <input id="icon_checkbox_7" name="checkbox_7" type="checkbox" class="required"> <label for="icon_checkbox_7">I agree. </label>
                         </div>
                   </div>
               </section>
@@ -423,29 +426,29 @@ function generate_b_a_contest_page()
                   <p>To be eligible to Enter the Icon Photo Contest the following Entry Criteria must be met or agreed to:</p>
                   <p>Disclosure of the Treatment Details, specified below, associated with the submitted photos.</p>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="icon_numTreatments">Number of treatments *</label>
-                      <input id="icon_numTreatments" name="icon_numTreatments" type="text" class="required">
+                      <label for="icon_num_treatments">Number of treatments *</label>
+                      <input id="icon_num_treatments" name="num_treatments" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="icon_hand_pieces">Icon hand piece(s) used *</label>
-                      <input id="icon_hand_pieces" name="icon_hand_pieces" type="text" class="required">
+                      <input id="icon_hand_pieces" name="hand_pieces" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="icon_treatmentArea">Area where treatment was performed *</label>
-                      <input id="icon_treatmentArea" name="icon_treatmentArea" type="text" class="required">
+                      <label for="icon_treatment_area">Area where treatment was performed *</label>
+                      <input id="icon_treatment_area" name="treatment_area" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="icon_treatmentTime">Time elapsed after the last treatment performed  *</label>
-                      <input id="icon_treatmentTime" name="icon_treatmentTime" type="text" class="required">
+                      <label for="icon_treatment_time">Time elapsed after the last treatment performed  *</label>
+                      <input id="icon_treatment_time" name="treatment_time" type="text" class="required">
                   </div>
                   <div class="bacontest-field-group treatment-group">
                       <label for="icon_settings">Settings used  *</label>
-                      <input id="icon_settings" name="icon_settings" type="text">
+                      <input id="icon_settings" name="settings" type="text">
                   </div>
                   <div class="bacontest-field-group treatment-group">
-                      <label for="icon_treatmentComments">Please add any comments regarding the history or satisfaction of the patient that is
+                      <label for="icon_treatment_comments">Please add any comments regarding the history or satisfaction of the patient that is
                           the subject of the entered photos *</label>
-                      <textarea id="icon_treatmentComments" name="icon_treatmentComments" class="required" rows="4" cols="60" style="color:grey"></textarea>
+                      <textarea id="icon_treatment_comments" name="treatment_comments" class="required" rows="4" cols="60" style="color:grey"></textarea>
                   </div>
                   <p>(*) Mandatory</p>
               </section>
@@ -455,18 +458,18 @@ function generate_b_a_contest_page()
                     <label for="icon_before_image" class="custom-file-upload-btn">
                         UPLOAD BEFORE IMAGE
                     </label>
-                    <p><input id="icon_before_image" type="file" accept='image/*' size="27"/></p>
+                    <p><input id="icon_before_image" name="before_image" type="file" accept='image/*' size="27"/></p>
 
                     <label for="icon_after_image" class="custom-file-upload-btn">
                         UPLOAD AFTER IMAGE
                     </label>
-                    <p><input id="icon_after_image" type="file" accept='image/*' size="27"/></p>
+                    <p><input id="icon_after_image" name="after_image" type="file" accept='image/*' size="27"/></p>
 
-                    By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.
+                    <p>By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.</p>
               </section>
           </div>
         </form>
-    </div> -->
+    </div>
 
     <?php
 }
@@ -477,5 +480,6 @@ function b_a_enqueue_scripts()
     wp_enqueue_style('bac_style', plugin_dir_url(__FILE__) . 'assets/css/before_after.css', '', "1.1", "all");
     wp_enqueue_style('jquery_steps_style', plugin_dir_url(__FILE__) . 'assets/css/jquery.steps-1.1.0/jquery.steps.css');
     wp_enqueue_script('jquery_steps_script', plugin_dir_url(__FILE__) . 'assets/js/jquery.steps-1.1.0/jquery.steps.js', array(), '1.1', true);
+    wp_enqueue_script('js_spin_script', plugin_dir_url(__FILE__) . 'assets/js/spin.min.js', array(), '1.1', true);
     wp_enqueue_script('bac_script', plugin_dir_url(__FILE__) . 'assets/js/before_after.js', array(), '1.1', true);
 }
