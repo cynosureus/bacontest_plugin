@@ -15,6 +15,9 @@ function generate_b_a_contest_page()
 
     ?>
     <div id="overlay"></div>
+    <div class="bac_hero_image">
+        <img src="<?php echo plugin_dir_url(__FILE__) ?>assets/images/bacontest_hero_img.png" alt="sculpsure and icon before and after contest" />
+    </div>
     <div class="bac_details">
         <p>Your SculpSure and Icon Before and After Photos Can Earn you $500!</p>
         <p>You continue to provide your patients with the results you desire – now it’s time to show them off! In addition to winning $500, winners will also be featured on Cynosure’s social media pages. Enter to win!</p>
@@ -46,11 +49,11 @@ function generate_b_a_contest_page()
                       <p class="official-rules"><strong>OFFICIAL RULES</strong></p>
                       <p><strong>ELIGIBILITY:</strong> No purchase is necessary.  The SculpSure Photo Contest is open only to individuals who are:</p>
                       <div class="eligibility-list">
-                          <p>•	Licensed Practitioners practicing in the United States who are permitted to perform SculpSure treatments based upon the respective state licensure rules that govern their practice.  Licensed Practitioners licensed to perform SculpSure treatments can include Physicians, Physicians Assistants, Nurse Practitioners, Nurses, and Aestheticians, for example.</p>
-                          <p>•	Legal United States residents;</p>
-                          <p>•	Age eighteen (18) or older; and who submit Before and After photographs of patients treated with a Cynosure SculpSure device.</p>
-                          <p>•	Licensed Practitioners who are not Vermont health care providers as defined by Vermont’s Prescribed Products Gift Ban and Disclosure Law; and</p>
-                          <p>•	Licensed Practitioners who are not Covered Recipients as defined by the Massachusetts Pharmaceutical and Medical Device Manufacturer Code of Conduct.</p>
+                        <p>•	Licensed Practitioners practicing in the United States who are permitted to perform SculpSure treatments based upon the respective state licensure rules that govern their practice.  Licensed Practitioners licensed to perform SculpSure treatments can include Physicians, Physicians Assistants, Nurse Practitioners, Nurses, and Aestheticians, for example.</p>
+                        <p>•	Legal United States residents;</p>
+                        <p>•	Age eighteen (18) or older; and who submit Before and After photographs of patients treated with a Cynosure SculpSure device.</p>
+                        <p>•	Licensed Practitioners who are not Vermont health care providers as defined by Vermont’s Prescribed Products Gift Ban and Disclosure Law; and</p>
+                        <p>•	Licensed Practitioners who are not Covered Recipients as defined by the Massachusetts Pharmaceutical and Medical Device Manufacturer Code of Conduct.</p>
                       </div>
                       <p>Cynosure will resolve any eligibility questions in its sole discretion.</p>
                       <p><strong>SPONSOR:</strong> The Photo Contest is sponsored by Cynosure, Inc. 5 Carlisle Road, Westford, MA 01886.</p>
@@ -217,18 +220,22 @@ function generate_b_a_contest_page()
               <h3>Upload Photos</h3>
               <section>
                   <p id="before-image-upload">Upload before and after photo as separate files, having file types JPG or PNG indicating in the file path ‘before’ or ‘after’:</p>
-                    <label for="ss_before_image" class="custom-file-upload-btn">
-                        UPLOAD BEFORE IMAGE
-                    </label>
-                    <p><input id="ss_before_image" name="before_image" type="file" accept='image/*' size="27" required /></p>
-                    <p id="ss_before_image_selected"></p>
-
-                    <label for="ss_after_image" class="custom-file-upload-btn">
-                        UPLOAD AFTER IMAGE
-                    </label>
-                    <p><input id="ss_after_image" name="after_image" type="file" accept='image/*' size="27" required/></p>
-                    <p id="ss_after_image_selected"></p>
-
+                  <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                          <label for="ss_before_image" class="custom-file-upload-btn">
+                              UPLOAD BEFORE IMAGE
+                          </label>
+                          <p><input id="ss_before_image" name="before_image" type="file" accept='image/*' size="27" required /></p>
+                          <div><img id="ss_before_image_preview" class="bac_image_preview" src="#" alt="before image preview" width="50%"></div>
+                      </div>
+                      <div class="col-md-6 col-sm-6">
+                          <label for="ss_after_image" class="custom-file-upload-btn">
+                              UPLOAD AFTER IMAGE
+                          </label>
+                          <p><input id="ss_after_image" name="after_image" type="file" accept='image/*' size="27" required/></p>
+                          <img id="ss_after_image_preview" class="bac_image_preview" src="#" alt="after image preview" width="50%">
+                      </div>
+                  </div>
                 <p>By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.</p>
               </section>
           </div>
@@ -266,33 +273,22 @@ function generate_b_a_contest_page()
                       <p><strong>TO ENTER:</strong> Submit your high resolution digital before and after patient photographs online through our website at www.cynosure.com/photocontest/icon by (1) completely filling in the Entry Form (below), which includes (a) ensuring that you can fulfill and affirm the Entry Criteria and (b) uploading your Before and After photos (below). By submitting an Entry Form, each submitter thereby agrees to the Official Rules of the Photo Contest.</p>
                       <p><strong>JUDGING AND CRITERIA:</strong> A panel of judges drawn in whole or in part from Cynosure’s marketing and creative staff will select the winning Before and After photos.  The judges may use a controlling point system evaluation scale using the following criteria:</p>
 
-                      <table id="icon-judging-criteria">
-                          <tr>
-                              <th class="icon-skin-condotion">Skin Revitalization</th>
-                              <th class="icon-skin-condotion">Hair Removal</th>
-                              <th class="icon-skin-condotion">Vein Treatment</th>
-                              <th class="icon-skin-condotion">Scars/Stretch Marks</th>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <p>Clear reduction of pigmentation, wrinkles and/or vessels (where applicable)</p>
-                                  <p>Noticeable improvement in the skin texture over the area of treatment. </p>
-                                  <p>Noticeable improvement in the skin tone over the area of treatment.</p>
-                              </td>
-                              <td>
-                                  <p>Clear reduction in hair thickness in area of treatment.</p>
-                                  <p>Clear reduction in hair density in area of treatment. </p>
-                              </td>
-                              <td>
-                                  <p>Clear reduction of visible red and/or blue vessels in the area of treatment. </p>
-                                  <p>Noticeable improvement in the skin tone over the area of treatment.</p>
-                              </td>
-                              <td>
-                                  <p>Noticeable improvement in the skin tone over the area of the scar or stretch mark. </p>
-                                  <p>Noticeable improvement in the skin texture over the area of the scar or stretch mark.</p>
-                              </td>
-                          </tr>
-                      </table>
+                      <p class="icon-skin-condotion">Skin Revitalization</p>
+                      <p>•	Clear reduction of pigmentation, wrinkles and/or vessels (where applicable)<br>
+                      •	Noticeable improvement in the skin texture over the area of treatment. <br>
+                      •	Noticeable improvement in the skin tone over the area of treatment.</p>
+
+                      <p class="icon-skin-condotion">Hair Removal</p>
+                      <p>•	Clear reduction in hair thickness in area of treatment.<br>
+                      •	Clear reduction in hair density in area of treatment.</p>
+
+                      <p class="icon-skin-condotion">Vein Treatment</p>
+                      <p>•	Clear reduction of visible red and/or blue vessels in the area of treatment. <br>
+                      •	Noticeable improvement in the skin tone over the area of treatment.</p>
+
+                      <p class="icon-skin-condotion">Scars/Stretch Marks</p>
+                      <p>•	Noticeable improvement in the skin tone over the area of the scar or stretch mark. <br>
+                      •	Noticeable improvement in the skin texture over the area of the scar or stretch mark.</p>
 
                       <p>The decisions made by the judges shall be made in their sole discretion and shall be binding and final.  Cynosure reserves the right in its sole discretion to select and designate panels of judges and to modify the panels and/or the evaluation criteria over time.</p>
                       <p>By entering, you agree to be bound by these Official Rules, and you agree that the decisions of the judges are final and binding in all respects.  Up to 5 winners will be selected quarterly as follows:</p>
@@ -455,16 +451,22 @@ function generate_b_a_contest_page()
               <h3>Upload Photos</h3>
               <section>
                   <p>Upload before and after photo as separate files, having file types JPG or PNG indicating in the file path ‘before’ or ‘after’:</p>
-                    <label for="icon_before_image" class="custom-file-upload-btn">
-                        UPLOAD BEFORE IMAGE
-                    </label>
-                    <p><input id="icon_before_image" name="before_image" type="file" accept='image/*' size="27"/></p>
-
-                    <label for="icon_after_image" class="custom-file-upload-btn">
-                        UPLOAD AFTER IMAGE
-                    </label>
-                    <p><input id="icon_after_image" name="after_image" type="file" accept='image/*' size="27"/></p>
-
+                  <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                          <label for="icon_before_image" class="custom-file-upload-btn">
+                              UPLOAD BEFORE IMAGE
+                          </label>
+                          <p><input id="icon_before_image" name="before_image" type="file" accept='image/*' size="27" required /></p>
+                          <div><img id="icon_before_image_preview" class="bac_image_preview" src="#" alt="before image preview" width="50%"></div>
+                      </div>
+                      <div class="col-md-6 col-sm-6">
+                          <label for="icon_after_image" class="custom-file-upload-btn">
+                              UPLOAD AFTER IMAGE
+                          </label>
+                          <p><input id="icon_after_image" name="after_image" type="file" accept='image/*' size="27" required/></p>
+                          <img id="icon_after_image_preview" class="bac_image_preview" src="#" alt="after image preview" width="50%">
+                      </div>
+                  </div>
                     <p>By clicking SUBMIT you certify that all information provided herein is accurate and is to the best of your knowledge and you Agree that you understand, agree with and are subject to the Official Rules.</p>
               </section>
           </div>
@@ -477,6 +479,7 @@ function generate_b_a_contest_page()
 add_action('wp_enqueue_scripts', 'b_a_enqueue_scripts');
 function b_a_enqueue_scripts()
 {
+    wp_enqueue_style('open_sans_gfont', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700', '', "1.1", "all");
     wp_enqueue_style('bac_style', plugin_dir_url(__FILE__) . 'assets/css/before_after.css', '', "1.1", "all");
     wp_enqueue_style('jquery_steps_style', plugin_dir_url(__FILE__) . 'assets/css/jquery.steps-1.1.0/jquery.steps.css');
     wp_enqueue_script('jquery_steps_script', plugin_dir_url(__FILE__) . 'assets/js/jquery.steps-1.1.0/jquery.steps.js', array(), '1.1', true);
